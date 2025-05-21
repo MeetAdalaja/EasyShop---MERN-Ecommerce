@@ -1,0 +1,32 @@
+MERN Stack Development Intern
+TechAnek Technologies
+January 2024 - April 2024
+
+
+Technologies: Node.js, Express.js, MongoDb, React.js, TypeScript, Sass, Redux Toolkit, RTK Query, Stripe, Firebase.
+
+Project: Advanced E-Commerce WebApp
+
+Features of Project: 
+Authentication using Firebase
+Latest Products
+Product Searching & Sorting by price filter and category filter
+payment using Stripe
+Revenue & Transactions
+Gain/Loss on monthly basis
+Total Users
+Products Management
+Stock management
+Order Management
+Customer Management
+Discount by coupons
+Respnosiveness
+Data Analysis by Various Charts (Bar, Pie, Line)
+
+use this content of project for more professionalism:
+-Implemented authentication using Firebase and integrated Stripe for secure payments.
+-Developed product features including latest products showcase, search, and sorting by price and category.
+-Managed revenue, transactions, and monthly gain/loss analysis for business insights.
+-Administered user, product, stock, order, and customer management systems.
+-Implemented discount features via coupons to drive sales and customer loyalty.
+-Ensured responsiveness and utilized various chart types for data analytics.

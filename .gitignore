@@ -1,0 +1,19 @@
+# Node dependencies (for both frontend and backend)
+ecommerce-frontend/node_modules/
+ecommerce-backend/node_modules/
+
+# Build outputs
+ecommerce-frontend/build/
+ecommerce-frontend/dist/
+ecommerce-backend/dist/
+
+# Environment variables
+ecommerce-frontend/.env
+ecommerce-backend/.env
+
+# Log files
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db

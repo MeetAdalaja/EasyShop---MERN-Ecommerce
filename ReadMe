@@ -1,0 +1,10 @@
+admin: meetadalja9@gmail.com
+
+to start the application:
+
+run parellely for backend:
+ecommerce-backend: npm run dev
+ecommerce-backend: npm run watch
+
+for front-end:
+ecommerce-frontend: npm run dev
