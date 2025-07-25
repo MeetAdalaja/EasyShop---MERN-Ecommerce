@@ -7,17 +7,20 @@ import ErrorHandler from "../utils/utility-class.js";
 import { myCache } from "../app.js";
 
 export const myOrders = TryCatch(async (req, res, next) => {
-  const { id: user } = req.query;
+  const userParam = req.query.id;
 
-  const key = `my-orders-${user}`;
+  // Ensure userParam is a string (as Mongoose expects)
+  if (typeof userParam !== 'string') {
+    return res.status(400).json({ success: false, message: "Invalid user ID" });
+  }
 
+  const key = `my-orders-${userParam}`;
   let orders = [];
 
   if (myCache.has(key)) {
     orders = JSON.parse(myCache.get(key) as string);
   } else {
-    orders = await Order.find({ user }); //ignore this error
-    //solve this error first
+    orders = await Order.find({ user: userParam }); // ✅ Type-safe now
     myCache.set(key, JSON.stringify(orders));
   }
 
@@ -26,6 +29,7 @@ export const myOrders = TryCatch(async (req, res, next) => {
     orders,
   });
 });
+
 
 export const allOrders = TryCatch(async (req, res, next) => {
   const key = `all-orders`;
