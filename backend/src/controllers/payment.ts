@@ -34,9 +34,13 @@ export const newCoupon = TryCatch(async (req, res, next) => {
 });
 
 export const applyDiscount = TryCatch(async (req, res, next) => {
-  const { coupon } = req.query;
+  const couponParam = req.query.coupon;
 
-  const discount = await Coupon.findOne({ code: coupon }); //ignore this error
+  if (typeof couponParam !== 'string') {
+    return res.status(400).json({ success: false, message: "Invalid coupon code format" });
+  }
+
+  const discount = await Coupon.findOne({ code: couponParam }); // ✅ Now type-safe
 
   if (!discount) return next(new ErrorHandler("Invalid Coupon Code", 400));
 
@@ -45,6 +49,7 @@ export const applyDiscount = TryCatch(async (req, res, next) => {
     discount: discount.amount,
   });
 });
+
 
 export const allCoupons = TryCatch(async (req, res, next) => {
   const coupons = await Coupon.find({});
